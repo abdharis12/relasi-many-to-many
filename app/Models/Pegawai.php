@@ -17,8 +17,13 @@ class Pegawai extends Model
         return $this->hasMany(Sppd::class, 'pegawai_id');
     }
 
+    // public function pengikuts()
+    // {
+    //     return $this->belongsToMany(Sppd::class, 'pengikuts', 'pegawai_id', 'sppd_id');
+    // }
+
     public function pengikuts()
     {
-        return $this->belongsToMany(Sppd::class, 'pengikuts', 'pegawai_id', 'sppd_id');
+        return $this->belongsToMany(Pegawai::class, 'pengikuts', 'sppd_id', 'pegawai_id');
     }
 }

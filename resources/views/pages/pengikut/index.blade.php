@@ -73,16 +73,18 @@
                                     </td>
                                 </tr>
                             @endforeach --}}
+
                             @foreach ($pegawais as $pegawai)
                                 <tr>
                                     <td class="px-6 py-4">
                                         {{ $loop->iteration }}
                                     </td>
-                                    <td>{{ $pegawai->nama }}</td>
-                                    <td>{{ $pegawai->sppds->pivot->no_sppd }}</td>
-                                    <td>{{ $pegawai->pengikuts->pivot->nama }}</td>
+                                    {{-- <td>{{ $pegawai->nama }}</td> --}}
+                                    <td>{{ $pegawai->sppds }}</td>
+                                    <td>{{ $pegawai->pengikuts }}</td>
                                 </tr>
                             @endforeach
+
                         </tbody>
                     </table>
                 </div>

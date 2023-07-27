@@ -14,10 +14,10 @@ class PengikutController extends Controller
     public function index()
     {
         //
-        // return dd(Pegawai::with(['sppds', 'pengikuts'])->get());
+        // return dd(Pengikut::with('pegawai')->get());
         return view('pages.pengikut.index', [
             'title' => 'pengikut',
-            'pegawais' => Pegawai::with(['sppds', 'pengikuts'])->get()
+            'pegawais' => Pegawai::with('pengikuts')->get()
         ]);
     }
 
