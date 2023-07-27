@@ -19,8 +19,7 @@ class SppdController extends Controller
         // return dd(Pegawai::with('sppds')->get());
         return view('pages.sppd.index', [
             'title' => 'Data Sppd',
-            // 'sppds' => Sppd::with('pegawai')->get()
-            'pegawai' => Pegawai::with('sppds')->get()
+            'sppds' => Sppd::with('pegawai')->get()
         ]);
     }
 

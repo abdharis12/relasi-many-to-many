@@ -17,7 +17,7 @@ class PengikutController extends Controller
         // return dd(Pegawai::with(['sppds', 'pengikuts'])->get());
         return view('pages.pengikut.index', [
             'title' => 'pengikut',
-            'data' => Pegawai::with(['sppds', 'pengikuts'])->get()
+            'pegawais' => Pegawai::with(['sppds', 'pengikuts'])->get()
         ]);
     }
 
