@@ -49,7 +49,7 @@
                 <h5 class="text-xl font-medium text-gray-900 dark:text-white mb-8">Table SPPD</h5>
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-cyan-50 dark:bg-cyan-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
                                     No.
@@ -100,19 +100,17 @@
                                 <td class="px-6 py-4">
                                     {{ $loop->iteration }}
                                 </td>
-                                @foreach ($item->sppds as $items)
-                                <td class="px-6 py-4">
-                                    {{ $items->no_sppd }}
-                                </td>
-                                @endforeach
+                                    @foreach ($item->sppds as $items)
+                                    <td class="px-6 py-4">
+                                        {{ $items->no_sppd }}
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        {{ $items->maksud }}
+                                    </td>
+                                    @endforeach
                                 <td class="px-6 py-4">
                                     {{ $item->nama }}
                                 </td>
-                                @foreach ($item->sppds as $items)
-                                <td class="px-6 py-4">
-                                    {{ $items->maksud }}
-                                </td>
-                                @endforeach
                                 <td class="px-6 py-4">
                                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> |
                                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Hapus</a>
