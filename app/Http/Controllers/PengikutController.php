@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pegawai;
-use App\Models\Pengikut;
+use App\Models\Sppd;
 use Illuminate\Http\Request;
 
 class PengikutController extends Controller
@@ -14,10 +14,10 @@ class PengikutController extends Controller
     public function index()
     {
         //
-        // return dd(Pengikut::with('pegawai')->get());
+        // return dd(Sppd::with('pegawai')->get());
         return view('pages.pengikut.index', [
-            'title' => 'pengikut',
-            'pegawais' => Pegawai::with('pengikuts')->get()
+            'title' => 'Data Pengikut',
+            'pengikut' => Pegawai::with('sppds')->get()
         ]);
     }
 
@@ -40,7 +40,7 @@ class PengikutController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Pengikut $pengikut)
+    public function show()
     {
         //
     }
@@ -48,7 +48,7 @@ class PengikutController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Pengikut $pengikut)
+    public function edit(string $id)
     {
         //
     }
@@ -56,7 +56,7 @@ class PengikutController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Pengikut $pengikut)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -64,7 +64,7 @@ class PengikutController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Pengikut $pengikut)
+    public function destroy(string $id)
     {
         //
     }

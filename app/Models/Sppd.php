@@ -17,9 +17,9 @@ class Sppd extends Model
         return $this->belongsTo(Pegawai::class, 'pegawai_id');
     }
 
-    public function pengikut()
+    public function pegawais()
     {
-        return $this->belongsToMany(Pegawai::class, 'pengikuts', 'sppd_id', 'pegawai_id');
+        return $this->belongsToMany(Pegawai::class);
     }
 
 }

@@ -12,15 +12,22 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pegawais', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->bigInteger('nip')->unique();
             $table->text('nama');
             $table->string('pangkat');
             $table->text('jabatan');
-            // $table->string('alamat');
-            // $table->bigInteger('no_hp');
-            // $table->string('email')->unique();
             $table->timestamps();
+        });
+
+        Schema::create('pegawai_sppd', function (Blueprint $table) {
+            // $table->bigInteger('pegawai_id')->unsigned();
+            // $table->bigInteger('sppd_id')->unsigned();
+
+            // $table->primary(['pegawai_id', 'sppd_id']);
+
+            $table->foreignId('pegawai_id')->onDelete('cascade');
+            $table->foreignId('sppd_id')->onDelete('cascade');
         });
     }
 

@@ -6,7 +6,7 @@
         <div class="items-center justify-center h-auto p-10">
             {{-- this is my form --}}
             <div class="flex justify-center content-center">
-                <h1 class="font-extrabold text-4xl">Hello, Friends !! Welcome to My World</h1>
+                <h1 class="font-extrabold text-4xl dark:text-white">Hello, Friends !! Welcome to My World</h1>
             </div>
             {{-- end form here --}}
         </div>

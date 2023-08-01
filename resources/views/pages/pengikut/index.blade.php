@@ -1,4 +1,4 @@
-@extends('main')
+@extends('main', ['title' => 'judul pengikut'])
 @section('content')
 <div class="p-4 sm:ml-64 dark:bg-slate-950">
     <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:bg-slate-950 mt-20 dark:border-gray-700">
@@ -38,7 +38,7 @@
                                     Nama Pengikut
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    Nama Pengikut
+                                    No SPPD
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     Action
@@ -47,14 +47,21 @@
 
                         </thead>
                         <tbody>
-                            {{-- @foreach ($pengikut as $item)
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+
+                            @foreach ($pengikut as $item)
+                                <tr>
                                     <td class="px-6 py-4">
                                         {{ $loop->iteration }}
                                     </td>
+
                                     <td class="px-6 py-4">
-                                        {{ $item->pegawai->nama }}
+                                        {{ $item->nama }}
                                     </td>
+                                        @foreach ($item->sppds as $items)
+                                            <td class="px-6 py-4">
+                                                {{ $items->id }} - {{ $items->no_sppd }}
+                                            </td>
+                                        @endforeach
                                     <td class="px-6 py-4">
                                         <button type="button" class="px-3 py-2 text-xs font-medium text-center inline-flex items-center bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 rounded-lg text-white">
                                             <svg class="w-3 h-3 text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
@@ -71,17 +78,6 @@
                                            Hapus
                                         </button>
                                     </td>
-                                </tr>
-                            @endforeach --}}
-
-                            @foreach ($pegawais as $pegawai)
-                                <tr>
-                                    <td class="px-6 py-4">
-                                        {{ $loop->iteration }}
-                                    </td>
-                                    {{-- <td>{{ $pegawai->nama }}</td> --}}
-                                    <td>{{ $pegawai->sppds }}</td>
-                                    <td>{{ $pegawai->pengikuts }}</td>
                                 </tr>
                             @endforeach
 

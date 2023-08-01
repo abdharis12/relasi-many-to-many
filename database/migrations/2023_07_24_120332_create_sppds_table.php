@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sppds', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->foreignId('pegawai_id')->onDelete('cascade');
             $table->string('no_sppd');
             $table->string('maksud');

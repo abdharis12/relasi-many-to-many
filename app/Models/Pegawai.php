@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\Sppd;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 
 class Pegawai extends Model
@@ -12,18 +14,8 @@ class Pegawai extends Model
     // protect id -> all fill can be filled except ID
     protected $guarded = ['id'];
 
-    public function sppds()
+    public function sppds(): BelongsToMany
     {
-        return $this->hasMany(Sppd::class, 'pegawai_id');
-    }
-
-    // public function pengikuts()
-    // {
-    //     return $this->belongsToMany(Sppd::class, 'pengikuts', 'pegawai_id', 'sppd_id');
-    // }
-
-    public function pengikuts()
-    {
-        return $this->belongsToMany(Pegawai::class, 'pengikuts', 'sppd_id', 'pegawai_id');
+        return $this->belongsToMany(Sppd::class);
     }
 }
